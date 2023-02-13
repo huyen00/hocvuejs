@@ -21,11 +21,11 @@
                 <div class="absolute top-0 p-16 w-full">
                     <div class="name_profile flex">
                         <div class="avt_profile">
-                            <img src="assets/avt.png" alt="">
+                            <img :src=user_profile.avt alt="">
                         </div>
                         <div class="text_name--laserTag ml-4 w-full">
                             <div class="flex justify-between">
-                                <p class="text-white text-2xl">{{ posts ? posts.Category: '' }}</p>
+                                <p class="text-white text-2xl">{{ user_profile.name }}</p>
                                 <div class="relative image_lever">
                                     <img src="assets/lv.png" alt="">
                                     <div class="absolute  w-full h-full text-center top-2">
@@ -37,7 +37,7 @@
                             <div class="w-full bg-gray-200 rounded-full mt-2">
                                 <div class="bg-blue-600 text-xs font-medium  text-blue-100 text-center p-0 leading-none rounded-l-full" style="width: 75%"> 75%</div>
                             </div>
-                            <p class="text-white text-l mt-2">HP 100</p>
+                            <p class="text-white text-l mt-2">Play Time: {{ user_profile.playtime }}</p>
                         </div>
                     </div>
                     <div class="start_laserTag relative mt-4">
@@ -212,7 +212,7 @@
 <script>
 // import { kill } from 'process';
 
-
+import { mapState } from 'vuex';
 export default {
     data() {
         return {
@@ -223,7 +223,9 @@ export default {
                 {name:"deaths", point: "13" },
                 {name:"calo", point: "1980" },
 
-            ]
+            ],
+          
+            
         }
     },
     name: 'laserTag',
@@ -233,26 +235,35 @@ export default {
     mounted(){
        this.getData();
     },
+    computed:{
+        // user_profile(){
+        //     return this.$store.state.stores.user_profile
+        // },
+        ...mapState("stores", {
+            user_profile: state => state.user_profile
+    
+        })
+    },
     methods: {
         getData (){
     
 
         // Tạo một request để truy xuất người dùng ứng với ID cho sẵn:
-       window.axios.get('https://devinfinity.holomia.com/api/v1/player/show/5')
-        .then(response =>{
-            this.posts = response.data.entries[2]
-            console.log(response.data.entries);
-            // console.log(response.data.entries[1].Description);
+    //    window.axios.get('https://devinfinity.holomia.com/api/v1/player/show/5')
+    //     .then(response =>{
+    //         // this.posts = response
+    //         console.log(response);
+    //         // console.log(response.data.entries[1].Description);
        
-        }
+    //     }
          
-        //    this.posts.response.data.entries
-            )
-        .catch( error=>{
-            // xử trí khi bị lỗi
-            console.log(error);
-            console.log("123")
-        });
+    //     //    this.posts.response.data.entries
+    //         )
+    //     .catch( error=>{
+    //         // xử trí khi bị lỗi
+    //         console.log(error);
+    //         console.log("123")
+    //     });
        
     }
 

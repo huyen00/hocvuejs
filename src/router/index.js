@@ -23,7 +23,7 @@ const routes = [// bao gồm danh sách route
     path: '/medals', 
     name: 'Medals', 
   
-    component: ArmorialGame 
+    component: ArmorialGame
   },
   {
     path: '/laser-tag', 
