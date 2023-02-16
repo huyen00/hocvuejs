@@ -7,7 +7,7 @@ export default {
     },
     addSinhVien(state){
         state.sinhvienbyId = null
-        state.showHide_FormCreate =true;
+        state.showHide_FormCreate =true
         state.editMode = false
     },
     editSinhVien(state,id){
@@ -36,6 +36,6 @@ export default {
         state.data_demo.sinhvien.splice(index,1)
         
         }
-}
+    }
 
 };

@@ -122,7 +122,7 @@ export default {
 
     },
     clickadd(data){
-      console.log(data)
+      console.log("clickadd:",data)
       this.$store.dispatch('stores/pushsinhvien',data)
       
     },

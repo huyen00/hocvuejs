@@ -2,7 +2,7 @@
 //Dòng này để import vue-router
 
 import TableSV from '@/components/TableSV'
-import product from '@/components/product'
+import products from '@/components/dataProducts/products'
 import ArmorialGame from '@/components/userGame/ArmorialGame'
 import Index from '@/components/index'
 import LaserTag from '@/components/userGame/laserTag'
@@ -14,11 +14,7 @@ const routes = [// bao gồm danh sách route
     name: 'home', 
     component: Index  
   },
-  {
-    path: '/sinhvien', 
-    name: 'TableSV', 
-    component: TableSV 
-  },
+  
   {
     path: '/medals', 
     name: 'Medals', 
@@ -35,10 +31,15 @@ const routes = [// bao gồm danh sách route
     name: 'Game History', 
     component: listHistory 
   },
+  {
+    path: '/sinhvien', 
+    name: 'TableSV', 
+    component: TableSV 
+  },
     {
       path: '/product', ///path của route
       name: 'product', // tên route
-      component: product // component route sử dụng
+      component: products // component route sử dụng
     }
   ]
 export default routes;
