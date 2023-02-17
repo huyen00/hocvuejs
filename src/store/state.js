@@ -1,7 +1,9 @@
 
 
 export default {
+    users: null,
     showHide_FormCreate: false,
+    showHide_FormUser: false,
     editMode: false,
     sinhvienbyId: null,
     user_profile:

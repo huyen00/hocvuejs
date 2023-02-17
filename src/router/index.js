@@ -7,6 +7,7 @@ import ArmorialGame from '@/components/userGame/ArmorialGame'
 import Index from '@/components/index'
 import LaserTag from '@/components/userGame/laserTag'
 import listHistory from '@/components/userGame/list-History'
+import listEntries from '@/components/entries/listEntries'
 
 const routes = [// bao gồm danh sách route
   {
@@ -40,6 +41,11 @@ const routes = [// bao gồm danh sách route
       path: '/product', ///path của route
       name: 'product', // tên route
       component: products // component route sử dụng
+    },
+    {
+      path: '/entries', ///path của route
+      name: 'Entries', // tên route
+      component: listEntries // component route sử dụng
     }
   ]
 export default routes;

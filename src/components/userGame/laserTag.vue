@@ -106,10 +106,10 @@
                     </div>
                     <div class="flex">
                         <img src="assets/fiting1.png" class="img-fiting" alt="">
-                        <div  class="block ml-8">
-                            <h1 class="uppercase text-white text-2xl">{{ posts ? posts.API : '' }}</h1>
+                        <div  class="block ml-8" v-for="post of posts" :key="post.id">
+                            <h1 class="uppercase text-white text-2xl">{{ posts ? posts.body : '' }}</h1>
                             <!-- <p class="text-white">Charge Rifle and Burst Rifle</p> -->
-                            <p class="text-white">{{posts ? posts.Link : ''}}</p>
+                            <p class="text-white">{{post.title[1]}}</p>
                         </div>
                         
                     </div>
@@ -216,7 +216,7 @@ import { mapState } from 'vuex';
 export default {
     data() {
         return {
-            posts: null,
+            posts: [],
             errors: [],
             history:[
                 {name:"kill", point: "980" },
@@ -249,21 +249,23 @@ export default {
     
 
         // Tạo một request để truy xuất người dùng ứng với ID cho sẵn:
-    //    window.axios.get('https://devinfinity.holomia.com/api/v1/player/show/5')
-    //     .then(response =>{
-    //         // this.posts = response
-    //         console.log(response);
-    //         // console.log(response.data.entries[1].Description);
+       window.axios.get('http://jsonplaceholder.typicode.com/posts')
+        .then(response =>{
+            // this.posts = response
+            console.log(response);
+            this.posts = response.data;
+            console.log("post:", this.posts)
+            // console.log(response.data.entries[1].Description);
        
-    //     }
+        }
          
-    //     //    this.posts.response.data.entries
-    //         )
-    //     .catch( error=>{
-    //         // xử trí khi bị lỗi
-    //         console.log(error);
-    //         console.log("123")
-    //     });
+        //    this.posts.response.data.entries
+            )
+        .catch( error=>{
+            // xử trí khi bị lỗi
+            console.log(error);
+            console.log("123")
+        });
        
     }
 
