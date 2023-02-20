@@ -4,16 +4,18 @@
 import TableSV from '@/components/TableSV'
 import products from '@/components/dataProducts/products'
 import ArmorialGame from '@/components/userGame/ArmorialGame'
-import Index from '@/components/index'
+// import Index from '@/components/index'
 import LaserTag from '@/components/userGame/laserTag'
 import listHistory from '@/components/userGame/list-History'
 import listEntries from '@/components/entries/listEntries'
-
+import viewContact from '@/components/contacts/viewContact'
+import listContact from '@/components/contacts/listContact'
+import addContact from '@/components/contacts/addContact'
 const routes = [// bao gồm danh sách route
   {
     path: '/', 
     name: 'home', 
-    component: Index  
+    component: listContact
   },
   
   {
@@ -46,6 +48,32 @@ const routes = [// bao gồm danh sách route
       path: '/entries', ///path của route
       name: 'Entries', // tên route
       component: listEntries // component route sử dụng
-    }
+    },
+    {
+      path: '/entries', ///path của route
+      name: 'Entries', // tên route
+      component: listEntries // component route sử dụng
+    },
+    {
+      path: '/view-contact', 
+      name: 'ViewContact', 
+      component: viewContact  
+    },
+    {
+      path: '/contact/view/:id', 
+      name: 'ViewContact', 
+      component: viewContact  
+    },
+    {
+      path: '/contact/add', 
+      name: 'addContact', 
+      component: addContact  
+    },
+    {
+      path: '/contact/edit', 
+      name: 'addContact', 
+      component: addContact  
+    },
+    
   ]
 export default routes;

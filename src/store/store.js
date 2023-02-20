@@ -1,6 +1,7 @@
 
 // store modules
 import dataGame from './dataGame/store'
+import contacts from './contacts/store'
 // main store
 import state from "./state";
 import mutations from "./mutations";
@@ -10,6 +11,7 @@ export default {
     namespaced: true,
     modules: {
         dataGame,
+        contacts
     },
     state,
     mutations,
