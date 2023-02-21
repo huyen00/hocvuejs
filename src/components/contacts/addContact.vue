@@ -2,10 +2,8 @@
   <div class="bg-gray-200 pt-8">
     <div class="container mx-auto">
         <div class="w-5/6">
-            <div class="flex" v-if="editMode==true">
-                <h2 class="text-2xl text-green-700">Edit Contact</h2>
-            </div>
-            <div class="flex" v-else>
+          
+            <div class="flex">
                 <h2 class="text-2xl text-green-700">Add Contact</h2>
             </div>
             <span class="italic ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias amet debitis error explicabo, facilis nemo non placeat qui repudiandae. Aperiam aut expedita inventore magnam nostrum, obcaecati officia perspiciatls quibusdam?</span>
@@ -38,7 +36,7 @@
 
 <script>
 
-// import EventBus from './../../EventBus'
+// import EventBus from '../../../EventBus'
 export default {
     name: 'addContact',
     props:{
@@ -49,7 +47,7 @@ export default {
     data(){
         return{
             list_contact:{
-                id: null,
+                // id: Math.floor(Math.random()*1000),
                 name:null,
                 phone: null,
                 email:null,
@@ -57,15 +55,21 @@ export default {
             }
         }
     },
-    mounted:{
-    //     EventBus.$on( 'editSinhVien', (user)=>{
-    //   console.log('editSinhVien',item)
+    mounted(){
+    //     EventBus.$on( 'editContact', (user)=>{
+    //   console.log('editContact',user)
     //     this.list_contact.id =user.id
     //     this.list_contact.name =user.name
     //     this.list_contact.phone =user.phone
     //     this.list_contact.email =user.email
     //     this.list_contact.avata =user.avata
     // })
+    },
+    computed:{
+        editMode(){
+        return  this.$store.state.stores.contacts.editMode
+        
+      },
     },
     methods:{
         saveChange(){

@@ -4,8 +4,14 @@
     <!-- <header /> -->
     <!-- <HomeGame /> -->
     <headerContact />
+    
     <!-- <listContact /> -->
-    <router-view></router-view> 
+    <div>
+      <menuSidebar />
+      <router-view></router-view> 
+    </div>
+   
+    <footerContact />
   </div>
 </template>
 
@@ -14,6 +20,8 @@
 // import TableSV from './components/TableSV.vue'
 // import HomeGame from './components/userGame/home.vue'
 import headerContact from './components/contacts/headerContact.vue'
+import footerContact from './components/contacts/footerContact.vue'
+import menuSidebar from './components/contacts/menuSidebar.vue'
 // import listContact from './components/contacts/listContact.vue'
 
 
@@ -28,6 +36,8 @@ export default {
     // TableSV,
     // HomeGame,
     headerContact,
+    footerContact,
+    menuSidebar,
     // listContact
     
   

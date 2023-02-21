@@ -11,6 +11,7 @@ import listEntries from '@/components/entries/listEntries'
 import viewContact from '@/components/contacts/viewContact'
 import listContact from '@/components/contacts/listContact'
 import addContact from '@/components/contacts/addContact'
+import editContact from '@/components/contacts/editContact'
 const routes = [// bao gồm danh sách route
   {
     path: '/', 
@@ -55,11 +56,6 @@ const routes = [// bao gồm danh sách route
       component: listEntries // component route sử dụng
     },
     {
-      path: '/view-contact', 
-      name: 'ViewContact', 
-      component: viewContact  
-    },
-    {
       path: '/contact/view/:id', 
       name: 'ViewContact', 
       component: viewContact  
@@ -70,9 +66,9 @@ const routes = [// bao gồm danh sách route
       component: addContact  
     },
     {
-      path: '/contact/edit', 
-      name: 'addContact', 
-      component: addContact  
+      path: '/contact/edit/:id', 
+      name: 'ediContact', 
+      component: editContact  
     },
     
   ]

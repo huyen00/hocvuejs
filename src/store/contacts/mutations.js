@@ -1,7 +1,8 @@
 export default{
-    editContact(state,id){
-        state.contactbyId = state.contacts.find(user => user.id ===id)
+    editFormContact(state,data){
+        state.contactById = state.contacts.find(user => user.id ===data.id)
         state.editMode = true
+        console.log("edit id", data)
     },
     SET_CONTACT(state,data){
         state.contacts = data
@@ -19,5 +20,14 @@ export default{
         console.log("addContact",data)
         // state.contacts.push(data)
       
+    },
+    EDIT_CONTACT(state,data){
+        const index = state.contacts.findIndex(user => user.id === data.id)
+        if( index !== -1){
+            state.contacts.splice(index,1, data)
+        }
+    },
+    SEARCH(state,data){
+        state.contacts =data
     }
 };

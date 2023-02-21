@@ -10,6 +10,14 @@ getContact({commit}){
          commit('SET_CONTACT', response.data);
       })
 },
+// lấy id contact edit
+getEditContact({commit},id){
+   console.log(commit)
+   console.log(id)
+ return  axios.get(`https://63e0d0e359bb472a74297298.mockapi.io/api/v1/contacts/${id}`)
+  
+},
+// xóa contact trong api
 deleteContact({commit},id){
    console.log(id)
    axios.delete(`https://63e0d0e359bb472a74297298.mockapi.io/api/v1/contacts/${id}`)
@@ -18,6 +26,7 @@ deleteContact({commit},id){
          commit('DELETE_CONTACT', response.data);
       })
 },
+// add contact trong api
 addContact({commit},list_contact){
    // console.log("list Contact3:",list_contact)
    console.log("list Contact4:",commit)
@@ -29,5 +38,19 @@ addContact({commit},list_contact){
          avata: list_contact.avata
       })
   
+},
+// sửa contact api
+editDataContact({commit}, data){
+   console.log("addUser1:", commit)
+console.log("list_contact",data)
+
+  return axios.put(`https://63e0d0e359bb472a74297298.mockapi.io/api/v1/contacts/${data.id}`,{
+      name: data.list_contact.name,
+         phone: data.list_contact.phone,
+
+         email: data.list_contact.email,
+         avata: data.list_contact.avata
+   })
+   
 },
 };
