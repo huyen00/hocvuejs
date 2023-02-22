@@ -23,13 +23,27 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
    modules: { stores },
 });
+// validate
+import Vuelidate from 'vuelidate'
 
 const router = new VueRouter({mode: 'history', routes});
 
 // new Vue({
 //   render: h => h(App),
 // }).$mount('#app')
+router.beforeEach((to, from, next) => {
+  // chuyển đến trang login nếu chưa được login
+  const publicPages = ['/login'];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = localStorage.getItem('user');
 
+  if (authRequired && !loggedIn) {
+    return next('/login');
+  }
+
+  next();
+})
+Vue.use(Vuelidate)
 const app = new Vue({
   render: h => h(App),
   store: store,

@@ -35,7 +35,8 @@ addContact({commit},list_contact){
          phone: list_contact.phone,
 
          email: list_contact.email,
-         avata: list_contact.avata
+         avata: list_contact.avata,
+         roles: list_contact.roles
       })
   
 },
@@ -49,7 +50,8 @@ console.log("list_contact",data)
          phone: data.list_contact.phone,
 
          email: data.list_contact.email,
-         avata: data.list_contact.avata
+         avata: data.list_contact.avata,
+         roles: data.list_contact.roles
    })
    
 },

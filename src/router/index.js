@@ -12,11 +12,32 @@ import viewContact from '@/components/contacts/viewContact'
 import listContact from '@/components/contacts/listContact'
 import addContact from '@/components/contacts/addContact'
 import editContact from '@/components/contacts/editContact'
+import roles from '@/components/contacts/roles'
+import login from '@/components/auth/login'
 const routes = [// bao gồm danh sách route
+{
+  path: '/', 
+  name: 'home', 
+  component: listContact
+},
+{
+  path: '/login', 
+  name: 'login', 
+  component: login
+},
+{ 
+  path: '*',
+  redirect: '/'
+ },
   {
-    path: '/', 
+    path: '/list-contact', 
     name: 'home', 
     component: listContact
+  },
+  {
+    path: '/roles', 
+    name: 'roles', 
+    component: roles,
   },
   
   {

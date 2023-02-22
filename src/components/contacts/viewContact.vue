@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-7 bg-gray-200 min-height-screen">
+  <div class="pt-7 bg-gray-200 min-height-screen" >
     <div class="container mx-auto">
         <div class="w-5/6">
             <div class="flex">

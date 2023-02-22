@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-200 h-full">
+    <div class="bg-gray-200 h-full" >
         <div class="p-8">
             <div class="w-5/6">
                 <div class="flex">
@@ -34,6 +34,8 @@
                                 <span class="block border-t-2 p-3">Mobile: <strong>{{ user.phone }}</strong></span>
                                 <span class="block border-t-2 p-3">
                                     Email: <strong>{{ user.email }}</strong></span>
+                                    <span class="block border-t-2 p-3">
+                                    Roles: <strong>{{ user.roles }}</strong></span>
                             </div>
                         </div>
                         <div class=" ml-6 mt-3">

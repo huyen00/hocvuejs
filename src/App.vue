@@ -6,11 +6,13 @@
     <headerContact />
     
     <!-- <listContact /> -->
-    <div>
+      
       <menuSidebar />
-      <router-view></router-view> 
-    </div>
-   
+      <div style="min-height: 855px; margin-left:230px">
+        <router-view></router-view> 
+      </div>
+
+
     <footerContact />
   </div>
 </template>
