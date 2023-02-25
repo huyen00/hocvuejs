@@ -1,0 +1,22 @@
+{
+    
+    
+    "roles" : [
+        {
+            "id": "1",
+            "name": "creator"
+        },
+        {
+            "id": "2",
+            "name": "editor"
+        },
+        {
+            "id": "3",
+            "name": "deletetor"
+        },
+        {
+            "id": "4",
+            "name": "viewtor"
+        }
+    ]
+}

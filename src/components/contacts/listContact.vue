@@ -92,9 +92,9 @@ export default {
             this.$store.dispatch('stores/contacts/deleteContact',id)
         },
         // lấy dữ liệu contact vào form edit
-        getContactEdit(){
-             this.$store.dispatch('stores/contacts/getEditContact')
-        },
+        // getContactEdit(){
+        //      this.$store.dispatch('stores/contacts/getEditContact')
+        // },
         // search api
     //     getAllStarWarsPeople() {
     //         fetch("https://63e0d0e359bb472a74297298.mockapi.io/api/v1/contacts/")

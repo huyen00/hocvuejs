@@ -8,6 +8,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 window.Bus = new Vue();
 window.axios = require('axios');
 import stores from './store/store';
@@ -25,6 +26,7 @@ const store = new Vuex.Store({
 });
 // validate
 import Vuelidate from 'vuelidate'
+// import token from './store/token';
 
 const router = new VueRouter({mode: 'history', routes});
 
@@ -32,17 +34,29 @@ const router = new VueRouter({mode: 'history', routes});
 //   render: h => h(App),
 // }).$mount('#app')
 router.beforeEach((to, from, next) => {
-  // chuyển đến trang login nếu chưa được login
-  const publicPages = ['/login'];
-  const authRequired = !publicPages.includes(to.path);
-  const loggedIn = localStorage.getItem('user');
+  console.log(stores)
+  const isAuthenticated = stores.state.auth.isAuthenticated
+  
+  // next-line: check if route ("to" object) needs authenticated
+  if (to.matched.some((record) => record.meta.requiresAuth) && !isAuthenticated) {
+    next('/login');
+  } else if (isAuthenticated) {
+    switch (to.name) {
+      case 'login' :
+        next({ path: '/contact' });
+        break;
+      case 'Home':
+        next({ path: '/contact' });
+        break;
+      default:
+        next();
+        break;
+    }
+  } else next();
 
-  if (authRequired && !loggedIn) {
-    return next('/login');
-  }
-
-  next();
 })
+window.axios.defaults.headers['Authorization'] = `Bearer ${stores.state.auth.token}` 
+
 Vue.use(Vuelidate)
 const app = new Vue({
   render: h => h(App),

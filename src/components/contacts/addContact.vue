@@ -8,18 +8,6 @@
             </div>
             <span class="italic ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias amet debitis error explicabo, facilis nemo non placeat qui repudiandae. Aperiam aut expedita inventore magnam nostrum, obcaecati officia perspiciatls quibusdam?</span>
         </div>
-        <!-- <form @submit.prevent="submit">
-        <div class="w-full mb-4" :class="{ 'border-red-500': $v.name.$error }">
-            <label class="form__label">Name</label>
-            <input class="w-full" v-model.trim="$v.name.$model"/>
-        </div>
-        <div class="error text-red-500" v-if="!$v.name.required">Name is required</div>
-        <div class="error text-red-500" v-if="!$v.name.minLength">Name must have at least {{$v.name.$params.minLength.min}} letters.</div>
-        <button class="button" type="submit" :disabled="submitStatus === 'PENDING'">Submit!</button>
-        <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for your submission!</p>
-        <p class="typo__p" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
-        <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
-        </form> -->
     <form @submit.prevent="saveChange">
         <div class="flex mt-8">
             <ul class="w-2/6" >
